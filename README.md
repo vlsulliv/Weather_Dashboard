@@ -26,7 +26,7 @@ Weather Dashborad
 - [] 5-day forecast that displays the date, an icon representation
 - [] presented with same information when history is selected
 - [] The following data is displayed:
-			5-day forecas:
+			5-day forecast:
 			date:       
 			icon:       
 			temperature:

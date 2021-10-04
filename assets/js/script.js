@@ -1,29 +1,25 @@
-// api.openweathermap.org/data/2.5/forecast?id={city ID}&appid={API key}
+function getApi() {
+    let requestUrl = "https://api.github.com/orgs/nodejs/repos";
 
-// let waUrl = "https://www.api.openweathermap.org/data/2.5/forecast?id=";
-// let appId = "appid=ca8dbf245cac1633722ad397fb7ba9e3";
-// let city;
+    fetch(requestUrl)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data);
+            for (var i = 0; i < data.length; i++) {
+                var createTablerow = document.createElement("tr");
+                var tableData = document.createElement("td");
+                var link = document.createelement("a");
 
-// var container = document.querySelector(".container");
-// container.addEventListener("click", function(event) {
-// });
+                link.textContent = data[i].html_url;
+                link.href = data[i].html_url;
 
-var badRequestUrl = "https://www.api.github.com/unicorns";
-var redirectUrl = "./404.html";
-let requestUrl =
-    "api.openweathermap.org/data/2.5/onecall?lat=38.8&lon=12.09&callback=test";
-let reponsedata = document.getElementById("response-text");
-let redirectt = "./404.html";
-
-function getApi(requestUrl) {
-    fetch(requestUrl).then(function (response) {
-        console.log(response);
-        if (response.status === 404) {
-            responseText.textContent = response.status;
-            document.location.redirectUrl(redirectt);
-        }
-        return response.json();
-    });
+                tableData.appendChild(link);
+                createTablerow.appendChild(tableData);
+                tableBody.appendChild(createTableRow);
+            }
+        });
 }
 
-getAPI(statusCode);
+fetchButton.addEventListener("click", getApi);
