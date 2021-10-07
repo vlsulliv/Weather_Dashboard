@@ -1,38 +1,82 @@
-let my_api = "ca8dbf245cac1633722ad397fb7ba9e3";
-let city_bane = "austin";
+/* 
+    DECLARATIONS:  
+*/
+let api_root = "https://api.openweathermap.org/data/2.5/forecast";
+let api_query = "?q=";
+let api_input = "houston"; // hard coded for example
+let api_key = "&appid=ca8dbf245cac1633722ad397fb7ba9e3";
+let lat, long, part;
 
-function getCoordinates() {
-    five_day_api;
+/*
+    1. api "fetch" inside function to get lat and long data. function is called after closing "}"
+        **https://api.openweathermap.org/data/2.5/forecast?q={city name}&appid={API key}**
+*/
+function getLocationData() {
+    let api_five_day_url = api_root + api_query + api_input + api_key;
+    fetch(api_five_day_url).then(function (response) {
+        if (response.ok) {
+            response.json().then(function (data) {
+                console.log(data);
+                lat = data.city.coord.lat;
+                console.log(lat);
+                long = data.city.coord.lon;
+                console.log(long);
+                getOneDay(lat, long);
+            });
+        }
+    });
+}
+getLocationData();
+
+/*
+    2. take coordinates from getLocationData() function and plug into 2nd api call. Drill down on response array for relevent data 
+*/
+function convert_KtoF(dailyTempK) {
+    dailyTempK * (9 / 5 + 32);
 }
 
-five_day_api = ` `;
+function getOneDay(lat, long) {
+    let oneDayURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=${part}${api_key}`;
+    fetch(oneDayURL).then(function (response) {
+        if (response.ok) {
+            response.json().then(function (data) {
+                console.log(data);
+                // declare and assign current weather data
+                let current_Humidity = data.current.humidity;
+                let current_TempF = (data.current.temp - 273.15) * (9 / 5) + 32;
+                let current_Date = data.current.dt;
+                let current_WindD = data.current.wind_deg;
+                let current_WindS = data.current.wind_speed;
+                let current_Weather = data.current.weather[0].description;
+                console.log(current_Humidity, current_TempF, current_Date);
 
-// fetch the
-fetch(five_dat_api);
-//
-
-function getApi() {
-    let requestUrl = "https://api.github.com/orgs/nodejs/repos";
-
-    fetch(requestUrl)
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-            console.log(data);
-            for (var i = 0; i < data.length; i++) {
-                var createTablerow = document.createElement("tr");
-                var tableData = document.createElement("td");
-                var link = document.createelement("a");
-
-                link.textContent = data[i].html_url;
-                link.href = data[i].html_url;
-
-                tableData.appendChild(link);
-                createTablerow.appendChild(tableData);
-                tableBody.appendChild(createTableRow);
-            }
-        });
+                // declare and assign daily weather data
+                for (var i = 1; i <= 5; i++) {
+                    console.log(data.daily[i]);
+                    console.log(data.daily[i].humidity);
+                    console.log(data.daily[i].temp);
+                    console.log(data.daily[i].dt);
+                    console.log(data.daily[i].weather);
+                    console.log(data.daily[i].weather.icon);
+                    let dailyHumidity = data.daily[i].humidity;
+                    let dailyTempF = convert_KtoF(data.daily[i].temp);
+                    let date = data.daily[i].dt;
+                    let dailyWeather = data.daily[i].weather;
+                    let weatherIcon = data.daily[i].weather.icon;
+                }
+            });
+        }
+    });
 }
 
-fetchButton.addEventListener("click", getApi);
+/*
+    3. get 5-day forecasts
+*/
+function getFiveDay() {
+    // fiveDayURL
+    // fetch().then(function (response) { })
+}
+
+/*
+    4. append response data to dashboard
+*/
