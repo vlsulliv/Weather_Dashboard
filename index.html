@@ -1,55 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!------ Link css files to html ------>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link href="./assets/css/style.css" rel="stylesheet" />
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
-            crossorigin="anonymous"
-        />
-        <title>&lt;input type="color" &gt; example</title>
-    </head>
-    <body>
-        <div class="jumbotron jumbotron-fluid">
+  <!-- Link css files to html -->
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./assets/css/style.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <title>&lt;input type="color" &gt; example</title>
+  </head>
+  <body>
+    <!-- Page Jumbotron -->
+    <div class="jumbotron jumbotron-fluid">
+      <div
+        class="p-1"
+        style="
+                color: whitesmoke;
+                background: linear-gradient(#3053A8, #252068);3053A826216A       
+                padding: 0.5%"
+      >
+        <h1 class="text-center">Weather Dashboard</h1>
+      </div>
+    </div>
+
+    <!-- 1 row 2 columns bootstrap  -->
+    <div class="container">
+      <div class="row">
+        <div class="col-4">
+          1 of 2
+          <h3><b>Search for a City:</b></h3>
+          <input
+            id="search"
+            type="text"
+            class="form-control"
+            placeholder="Enter a City"
+            aria-label="Enter a City"
+            aria-describedby="basic-addon2"
+          />
+          <input
+            class="btn btn-primary"
+            type="submit"
+            value="Submit"
+            id="submit_btn"
+          />
+          <form id="initial-state-form p-1"></form>
+          <div class="form-group col-lg-4"></div>
+        </div>
+        <div class="col-8">
+          2 of 2
+          <div id="one">
+            <div id="two-a" class="container d-flex justify-content-center">
+              <!-- <div class="card border-success mb-3" style="max-width: 30rem"> -->
+              <p class="" id="one"></p>
+              <div class="card-body text-success">
+                <p class="card-title" id="two">Success card title</p>
+                <p class="card-title" id="three">Success card title</p>
+                <p class="card-title" id="four">Success card title</p>
+                <p class="card-title" id="five">Success card title</p>
+                <p class="card-text" id="six"></p>
+              </div>
+            </div>
+          </div>
+          <div
+            id="two-b"
+            class="container d-flex justify-content-center flex-wrap"
+          >
             <div
-                class="p-1"
-                style="
-                    color: whitesmoke;
-                    background: linear-gradient(#3053A8, #252068);3053A826216A               padding: 0.5%;
-                "
+              id="three-b"
+              class="card border-success mb-3"
+              style="max-width: 12rem; min-width: 12rem;"
             >
-                <h1 class="text-center">Weather Dashboard</h1>
+              <div class="card-header bg-transparent border-success">
+                Header
+              </div>
+              <div class="card-body text-success">
+                <h5 class="card-title">Success card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
             </div>
-        </div>
-
-        <div class="contain-fluid">
-            <div class="p-2 col-12">
-                <div class="row">
-                    <h3><b>Search for a City:</b></h3>
-                    <div class="col-md-12">
-                        <input
-                            class="btn btn-primary"
-                            type="submit"
-                            value="Submit"
-                        />
-                        <form id="initial-state-form p-1">
-                            <div class="form-group col-lg-4"> </div>
-                        </form>
-                    </div>
-                </div>
+            <div
+              id="three-c"
+              class="card border-success mb-3"
+              style="max-width: 12rem; min-width: 12rem;"
+            >
+              <div class="card-header bg-transparent border-success">
+                Header
+              </div>
+              <div class="card-body text-success">
+                <h5 class="card-title">Success card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
             </div>
+            <div
+              id="three-d"
+              class="card border-success mb-3"
+              style="max-width: 12rem; min-width: 12rem;"
+            >
+              <div class="card-header bg-transparent border-success">
+                Header
+              </div>
+              <div class="card-body text-success">
+                <h5 class="card-title">Success card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+            <div
+              id="three-e"
+              class="card border-success mb-3"
+              style="max-width: 12rem; min-width: 12rem;"
+            >
+              <div class="card-header bg-transparent border-success">
+                Header
+              </div>
+              <div class="card-body text-success">
+                <h5 class="card-title">Success card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+            <div
+              id="three-f"
+              class="card border-success mb-3"
+              style="max-width: 12rem; min-width: 12rem;"
+            >
+              <div class="card-header bg-transparent border-success">
+                Header
+              </div>
+              <div class="card-body text-success">
+                <h5 class="card-title">Success card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
 
-        <!------- link (2) js files ------>
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
-            crossorigin="anonymous"
-        ></script>
-        <script src="./assets/js/script.js"></script>
-    </body>
+    <!-- User search  -->
+
+    <!-- Main Dial Contents  -->
+
+    <!-- link (2) js files -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
 </html>

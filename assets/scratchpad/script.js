@@ -16,7 +16,7 @@ function getApi(requestUrl) {
         console.log(response);
         if (response.status === 404) {
             responseText.textContent = response.status;
-            document.location.redirectUrl(redirect);
+            document.location.redirectUrl('./../images/placeholder.png');
         }
         return response.json();
     });

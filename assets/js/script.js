@@ -12,16 +12,18 @@ let lat, long, part;
         **https://api.openweathermap.org/data/2.5/forecast?q={city name}&appid={API key}**
 */
 function getLocationData() {
-    let api_five_day_url = api_root + api_query + api_input + api_key;
-    fetch(api_five_day_url).then(function (response) {
+let api_five_day_url = api_root + api_query + api_input + api_key;
+fetch(api_five_day_url)
+    .then(function (response) {
         if (response.ok) {
-            response.json().then(function (data) {
-                console.log(data);
-                lat = data.city.coord.lat;
-                console.log(lat);
-                long = data.city.coord.lon;
-                console.log(long);
-                getOneDay(lat, long);
+    response.json()
+        .then(function (data) {
+            console.log(data);
+            lat = data.city.coord.lat;
+            console.log(lat);
+            long = data.city.coord.lon;
+            console.log(long);
+            getOneDay(lat, long);
             });
         }
     });
@@ -31,24 +33,35 @@ getLocationData();
 /*
     2. take coordinates from getLocationData() function and plug into 2nd api call. Drill down on response array for relevent data 
 */
-function convert_KtoF(dailyTempK) {
-    dailyTempK * (9 / 5 + 32);
-}
-
 function getOneDay(lat, long) {
     let oneDayURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=${part}${api_key}`;
     fetch(oneDayURL).then(function (response) {
-        if (response.ok) {
-            response.json().then(function (data) {
-                console.log(data);
-                // declare and assign current weather data
-                let current_Humidity = data.current.humidity;
-                let current_TempF = (data.current.temp - 273.15) * (9 / 5) + 32;
-                let current_Date = data.current.dt;
-                let current_WindD = data.current.wind_deg;
-                let current_WindS = data.current.wind_speed;
-                let current_Weather = data.current.weather[0].description;
-                console.log(current_Humidity, current_TempF, current_Date);
+        if (response.ok) {response.json().then(
+            function (data) {
+                console.log(data)
+            })
+            return data
+        }
+        var one = document.getElementById("p")
+        one.innerText = data.current.humidity;
+
+
+
+      
+        // declare and assign current weather data
+        var current_Humidity = data.current.humidity;
+        Document.getElementById("two").innerHTML(current_Humidity);
+
+        var current_TempF = (data.current.temp - 273.15) * (9 / 5) + 32;
+        Document.getElementById("two").innerHTML(current_TempF);
+        var current_Date = data.current.dt;
+        Document.getElementById(current_Humidity.id).then("four").innerHTML("current_WindD");
+        var current_WindD = data.current.wind_deg;
+        Document.getElementById(current_Humidity.id).then("five").innerHTML("current_WindD");
+        var current_WindS = data.current.wind_speed;
+        Document.getElementById(current_Humidity.id).then("six").innerHTML("current_WindS");
+        var current_Weather = data.current.weather[0].description;
+        Document.getElementById(current_Humidity.id).then("seven").innerHTML("current_Weather");
 
                 // declare and assign daily weather data
                 for (var i = 1; i <= 5; i++) {
@@ -58,25 +71,46 @@ function getOneDay(lat, long) {
                     console.log(data.daily[i].dt);
                     console.log(data.daily[i].weather);
                     console.log(data.daily[i].weather.icon);
-                    let dailyHumidity = data.daily[i].humidity;
-                    let dailyTempF = convert_KtoF(data.daily[i].temp);
-                    let date = data.daily[i].dt;
-                    let dailyWeather = data.daily[i].weather;
-                    let weatherIcon = data.daily[i].weather.icon;
+                    var dailyHumidity = data.daily[i].humidity;
+                    var dailyTempF = convert_KtoF(data.daily[i].temp);
+                    var date = data.daily[i].dt;
+                    var dailyWeather = data.daily[i].weather;
+                    var weatherIcon = data.daily[i].weather.icon;
                 }
-            });
-        }
-    });
-}
-
+    })
+// let a = current_Humidity
+// console.log(a)
 /*
     3. get 5-day forecasts
 */
-function getFiveDay() {
-    // fiveDayURL
-    // fetch().then(function (response) { })
-}
+document.getElementById("submit_btn").addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    // get user input
+    let inputCity = document.getElementById("search").value;
+    // complete api uri, let api_uri;
 
-/*
-    4. append response data to dashboard
-*/
+    // CREATE CARD - DEFINE CONTAINTER
+    // let newCard = document.createElement("div");
+    // newCard.setAttribute("id", `card-${numCards++}`);
+    // let cardBody = document.createElement("div");
+    // cardBody.setAttribute("class", "card-body");
+
+    // CARD TITLE
+    let cardHeader = document.createElement("h5");
+    cardHeader.setAttribute("class", "card-title");
+    cardHeader.innerHTML = searchKeyword;
+
+    // CARD BODY
+    // let cardContent = document.createElement("p");
+    // cardContent.setAttribute("class", "card-text");
+
+    // Append card
+    // cardBody.appendChild(cardHeader);
+    // newCard.appendChild(cardBody);
+    return inputCity;
+});
+// console.log(inputCity);
+
+
+ // 4. append response data to dashboard
