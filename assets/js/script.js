@@ -33,51 +33,52 @@ getLocationData();
 /*
     2. take coordinates from getLocationData() function and plug into 2nd api call. Drill down on response array for relevent data 
 */
-function getOneDay(lat, long) {
-    let oneDayURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=${part}${api_key}`;
-    fetch(oneDayURL).then(function (response) {
-        if (response.ok) {response.json().then(
-            function (data) {
-                console.log(data)
-            })
-            return data
-        }
-        var one = document.getElementById("p")
-        one.innerText = data.current.humidity;
+// function getOneDay(lat, long) {
 
+let oneDayURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=${part}${api_key}`;
+fetch(oneDayURL).then(function (response) {
+    if (response.ok) {response.json().then(
+        function (data) {
+            console.log(data)
+        })
+    }
+return data
 
+var one = document.getElementById("p")
+one.innerText = data.current.humidity;
 
       
-        // declare and assign current weather data
-        var current_Humidity = data.current.humidity;
-        Document.getElementById("two").innerHTML(current_Humidity);
+// declare and assign current weather data
+var current_Humidity = data.current.humidity;
+Document.getElementById("two").innerHTML(current_Humidity);
 
-        var current_TempF = (data.current.temp - 273.15) * (9 / 5) + 32;
-        Document.getElementById("two").innerHTML(current_TempF);
-        var current_Date = data.current.dt;
-        Document.getElementById(current_Humidity.id).then("four").innerHTML("current_WindD");
-        var current_WindD = data.current.wind_deg;
-        Document.getElementById(current_Humidity.id).then("five").innerHTML("current_WindD");
-        var current_WindS = data.current.wind_speed;
-        Document.getElementById(current_Humidity.id).then("six").innerHTML("current_WindS");
-        var current_Weather = data.current.weather[0].description;
-        Document.getElementById(current_Humidity.id).then("seven").innerHTML("current_Weather");
+var current_TempF = (data.current.temp - 273.15) * (9 / 5) + 32;
+Document.getElementById("two").innerHTML(current_TempF);
+var current_Date = data.current.dt;
+Document.getElementById(current_Humidity.id).then("four").innerHTML("current_WindD");
+var current_WindD = data.current.wind_deg;
+Document.getElementById(current_Humidity.id).then("five").innerHTML("current_WindD");
+var current_WindS = data.current.wind_speed;
+Document.getElementById(current_Humidity.id).then("six").innerHTML("current_WindS");
+var current_Weather = data.current.weather[0].description;
+Document.getElementById(current_Humidity.id).then("seven").innerHTML("current_Weather");
 
-                // declare and assign daily weather data
-                for (var i = 1; i <= 5; i++) {
-                    console.log(data.daily[i]);
-                    console.log(data.daily[i].humidity);
-                    console.log(data.daily[i].temp);
-                    console.log(data.daily[i].dt);
-                    console.log(data.daily[i].weather);
-                    console.log(data.daily[i].weather.icon);
-                    var dailyHumidity = data.daily[i].humidity;
-                    var dailyTempF = convert_KtoF(data.daily[i].temp);
-                    var date = data.daily[i].dt;
-                    var dailyWeather = data.daily[i].weather;
-                    var weatherIcon = data.daily[i].weather.icon;
-                }
-    })
+        // declare and assign daily weather data
+        for (var i = 1; i <= 5; i++) {
+            console.log(data.daily[i]);
+            console.log(data.daily[i].humidity);
+            console.log(data.daily[i].temp);
+            console.log(data.daily[i].dt);
+            console.log(data.daily[i].weather);
+            console.log(data.daily[i].weather.icon);
+            var dailyHumidity = data.daily[i].humidity;
+            var dailyTempF = convert_KtoF(data.daily[i].temp);
+            var date = data.daily[i].dt;
+            var dailyWeather = data.daily[i].weather;
+            var weatherIcon = data.daily[i].weather.icon;
+        }
+
+}
 // let a = current_Humidity
 // console.log(a)
 /*
@@ -86,8 +87,9 @@ function getOneDay(lat, long) {
 document.getElementById("submit_btn").addEventListener("click", (e) => {
     e.preventDefault();
     e.stopPropagation();
+}
     // get user input
-    let inputCity = document.getElementById("search").value;
+    let inputCity = document.getElementById("search").value
     // complete api uri, let api_uri;
 
     // CREATE CARD - DEFINE CONTAINTER
@@ -109,8 +111,8 @@ document.getElementById("submit_btn").addEventListener("click", (e) => {
     // cardBody.appendChild(cardHeader);
     // newCard.appendChild(cardBody);
     return inputCity;
-});
+        }
+    )
+}
 // console.log(inputCity);
 
-
- // 4. append response data to dashboard
