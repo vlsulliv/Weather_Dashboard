@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+/* ######## Apply to all ########### */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 16px;
+    /* vertical-align: baseline; */
+    background: transparent;
+}
+
+.container {
+    padding-top: 30px; 
+    margin-top: 20px; 
+    font-family: 'Roboto', sans-serif;
+}
+
+.left-column {
+    float: left;
+    position: relative;
+    /* justify-content:left; */
+    right:200px;
+    width: 30%;
+}
+
+/* ########## nav ############# */
+
+.navbar {
+    color: whitesmoke;
+    background: linear-gradient(#3053A8, #252068);
+    padding-top: 10px;
+    padding-bottom:10px;
+    display:flex;
+    justify-content: center;
+}
+
+.nav-text{
+    font-size: 50px;
+}
+
+/* ############ body ###############  */
+
+/* search*/
+.city-search-text{
+    font-weight: bold;
+    font-size:20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.column-one{
+    float: left; 
+    position: relative; 
+    right: 300px;
+}
+/* column 2*/
+.column-two {
+    float: right; 
+    position: relative;
+    left: 250px; 
+}
+
+p#one {
+    width: 1700px;
+
+}
+div#two-a{
+    width: 1250px;
+}
+#div.card-1d {
+    border-style: solid ;
+    border-width: thick;
+    border-color: black;
+    padding: 10px;
+    width: 2000px;
+}
+cd-1day {
+    width: 1500px;
+}
+
+
+/* ######### Network Info ############ */
+
+.search {
+    /* width: 220px; */
+    color:white;
+
+}
