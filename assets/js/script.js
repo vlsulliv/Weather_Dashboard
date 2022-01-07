@@ -1,46 +1,72 @@
-const apiKey = "&appid=ca8dbf245cac1633722ad397fb7ba9e3";
 
-/*  DECLARATIONS: */
-let apiRoot = "https://api.openweathermap.org/data/2.5/forecast";
-let apiQuery = "?q=";
-let cityName;
-var apiFiveDayURL = apiRoot + apiQuery + cityName + apiKey;
+let apiKey = "&appid=8640e73fae150abb200d3b09df7599f2";
+// let currURL = "https://api.openweathermap.org/data/2.5/weather?q=";
+let cityName = "austin";
 
-let lat, long, part;
+let lat = "";
+let long = "";
+var part = 'hour, min';
+var storageList = [];
+
+let input = document.getElementById('searchBtn')
+
+// input.addEventListener('click', function(e) {
+//     e.preventDefault;
+//     var cityName = document.getElementById('search').value;
+//     console.log("success")
+//     console.log(cityName);
+// })
 
 
- /*  1. api "fetch" inside function to get lat and long data. function is called after closing "}" */
-/*  2. take coordinates from getFiveDayData() */
+
+// recall and store user inputs
+var inputStorage = JSON.parse(local.storage.getItem('useStorage'));
 
 
-function getFiveDayData() {
-fetch(apiFiveDayURL)
-    .then(function (response) {
-        if (response.ok) { response.json()
-            .then(function (data) {
-            console.log(data);
-            lat = data.city.coord.lat;
-            long = data.city.coord.lon;
-            getOneDayURL(lat, long);
-            });
-        return
-        }
-    });
+// get coordinates for 5 day URI
+function getLocation(cityName) {
+    var fiveDayURI = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}`;
+    fetch(fiveDayURI).then(res => {
+        if (Response.ok) {
+            res.json().then(function(data) {
+                console.log(data);
+                lat = data.city.coord.lat;
+                long = data.city.coord.lon;
+                oneDayData(lat, long);
+        })}
+    })
 }
-getFiveDayData();
+getLocation(cityName);
 
-// https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
+function oneDayData(lat, long) {
+    let oneDayURI = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${longe}&exclude=${part}&appid=${apiKey}`;
+    
+    fetch(oneDayURI).then(res => {
+        res.json().then(data => {
+            console.log(data);
+        })
+    })
+}
 
-const apiOneDayURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=${part}${apiKey}`;
-function getOneDayURL(lat, long){
-fetch(apiOneDayURL)
-.then(function (response) { if (response.ok) { response.json()
-    .then(function (data) { console.log(data) })
-        return data
-        }
-    }
-)}
-// getOneDayURL()
+
+function fiveDayData(lat, long) {
+    // FiveDayURI = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${API_key}`;
+
+    fetch(FiveDayURI).then(res => {
+            res.json().then(data => {
+                console.log(data);
+                var lat = data.coord.lat;
+                var long = data.coord.lon;
+            })
+    })
+}
+
+
+
+
+
+
+
 
 // console.log(data)
 // var one = document.getElementById("p")
@@ -83,12 +109,12 @@ fetch(apiOneDayURL)
 /*
     3. get 5-day forecasts
 */
-let userInput = document.getElementById('search-btn')
-search.addEventListener('onClick', (e) => {
-    e.preventDefault() && e.stopPropagation();
+// let userInput = document.getElementById('search-btn')
+// search.addEventListener('onClick', (e) => {
+//     e.preventDefault() && e.stopPropagation();
 
     // get user input
-    let inputCity = document.getElementById("search").value
+    // let inputCity = document.getElementById("search").value
     // complete api uri, let api_uri;
 
     // CREATE CARD - DEFINE CONTAINTER
@@ -98,9 +124,9 @@ search.addEventListener('onClick', (e) => {
     // cardBody.setAttribute("class", "card-body");
 
     // CARD TITLE
-    let cardHeader = document.createElement("h5");
-    cardHeader.setAttribute("class", "card-title");
-    cardHeader.innerHTML = searchKeyword;
+    // let cardHeader = document.createElement("h5");
+    // cardHeader.setAttribute("class", "card-title");
+    // cardHeader.innerHTML = searchKeyword;
 
     // CARD BODY
     // let cardContent = document.createElement("p");
@@ -110,7 +136,7 @@ search.addEventListener('onClick', (e) => {
     // cardBody.appendChild(cardHeader);
     // newCard.appendChild(cardBody);
     // return inputCity;
-})
+// })
 
 // console.log(inputCity);
 

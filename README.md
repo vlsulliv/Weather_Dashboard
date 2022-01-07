@@ -1,18 +1,11 @@
-<img href="https://www.imagebam.com/view/ME3ZEDT" alt="banner">
-
-
-Weather Dashborad
-=================
-<time datetime="10-01-2021"> Jan 20 2016</time><br>
-<time datetime="19:30">19:30</time>
+# Weather Dashborad
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Summary
 
 ```
-<strong>place</strong> Holder
 ```
 
-<strong>place</strong> Holder
 
 ## Minimum Viable Product
 ```
@@ -64,6 +57,5 @@ Weather Dashborad
 [Bryan Clark](https://thenextweb.com/news/weather-apps-are-secretly-selling-your-location-data-to-the-highest-bidder)
 
 ## License
-```
+
 [MIT](https://choosealicense.com/licenses/mit/)
-```
