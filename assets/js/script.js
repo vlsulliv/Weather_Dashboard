@@ -1,26 +1,19 @@
-
-let apiKey = "&appid=8640e73fae150abb200d3b09df7599f2";
-// let currURL = "https://api.openweathermap.org/data/2.5/weather?q=";
-let cityName = "austin";
-
-let lat = "";
-let long = "";
+let cityName = 'austin';
 var part = 'hour, min';
-var storageList = [];
+let lat, long;
 
-let input = document.getElementById('searchBtn')
+let apiKey = "8640e73fae150abb200d3b09df7599f2";
+let fiveDayURI = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}`;
+let oneDayURI = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=${part}&appid=${apiKey}`;
 
-// input.addEventListener('click', function(e) {
-//     e.preventDefault;
-//     var cityName = document.getElementById('search').value;
-//     console.log("success")
-//     console.log(cityName);
-// })
-
-
+var userSearch = [];
+userSearch.push("houston");
+userSearch.push("austin");
 
 // recall and store user inputs
-var inputStorage = JSON.parse(local.storage.getItem('useStorage'));
+
+
+// let city = JSON.parse(local.storage.getItem('useStorage')); 
 
 
 // declare var & assign with button element to add event listener
@@ -29,10 +22,20 @@ var inputStorage = JSON.parse(local.storage.getItem('useStorage'));
 // assign form data to variable on click
 
 
+// get 5 day & location data
+function fiveDayData(lat, long) {
+    fetch(fiveDayURI).then(res => {
+        res.json().then(data => {
+            console.log(data);
+            var lat = data.city.coord.lat;
+            var long = data.city.coord.lon;
+        })
+    })
+}
+fiveDayData();
 
 // get coordinates for 5 day URI
 function getLocation(cityName) {
-    var fiveDayURI = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}`;
     fetch(fiveDayURI).then(res => {
         if (Response.ok) {
             res.json().then(function(data) {
@@ -45,30 +48,16 @@ function getLocation(cityName) {
 }
 getLocation(cityName);
 
-function oneDayData(lat, long) {
-    let oneDayURI = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${longe}&exclude=${part}&appid=${apiKey}`;
-    
+
+
+// fetch oneDayData
+function oneDayData(lat, long) {   
     fetch(oneDayURI).then(res => {
         res.json().then(data => {
             console.log(data);
         })
     })
 }
-
-
-function fiveDayData(lat, long) {
-    // FiveDayURI = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${API_key}`;
-
-    fetch(FiveDayURI).then(res => {
-            res.json().then(data => {
-                console.log(data);
-                var lat = data.coord.lat;
-                var long = data.coord.lon;
-            })
-    })
-}
-
-
 
 
 
