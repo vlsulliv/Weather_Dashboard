@@ -23,6 +23,13 @@ let input = document.getElementById('searchBtn')
 var inputStorage = JSON.parse(local.storage.getItem('useStorage'));
 
 
+// declare var & assign with button element to add event listener
+
+
+// assign form data to variable on click
+
+
+
 // get coordinates for 5 day URI
 function getLocation(cityName) {
     var fiveDayURI = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}`;
