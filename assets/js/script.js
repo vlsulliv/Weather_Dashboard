@@ -1,73 +1,108 @@
-let cityName = 'austin';
-var part = 'hour, min';
-let lat, long;
+/******************************************************
+ * Weather Dashboard By: Vince - github.com/vlsulliv *
+******************************************************/ 
+let cityKey = "austin";
+let part = 'hour, min';
+let lat = "30.2672";
+let lon = "-97.7431";
+let keyID = "8640e73fae150abb200d3b09df7599f2";
+let fiveDayURI = `https://api.openweathermap.org/data/2.5/weather?q=${cityKey}&appid=${keyID}`;
+let oneDayURI = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${keyID}`;
 
-let apiKey = "8640e73fae150abb200d3b09df7599f2";
-let fiveDayURI = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}`;
-let oneDayURI = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=${part}&appid=${apiKey}`;
+let storeInputID = [];
 
-var userSearch = [];
-userSearch.push("houston");
-userSearch.push("austin");
+/******************************************************
+ * use local store to put & get searches
+ * declare vars _ assign value as button
+ * store user input in var
+******************************************************/ 
 
-// recall and store user inputs
+if (storeInputID.length != 0 ) {
+    let storeInputID = localStorage.setItem(inputID);
+} else {/*enter command here*/}
 
+/******************* 5 DAY API CALL ************************/ 
 
-// let city = JSON.parse(local.storage.getItem('useStorage')); 
-
-
-// declare var & assign with button element to add event listener
-
-
-// assign form data to variable on click
-
-
-// get 5 day & location data
-function fiveDayData(lat, long) {
-    fetch(fiveDayURI).then(res => {
-        res.json().then(data => {
-            console.log(data);
-            var lat = data.city.coord.lat;
-            var long = data.city.coord.lon;
-        })
-    })
+function fiveDayAPI(cityKey) {
+    fetch(fiveDayURI).then(function(response) {
+        if(response.ok) {
+            response.json().then(function(data) { console.log(data);
+                let lat = data.coord.lat;
+                let lon = data.coord.lon;
+                oneDayWeather(lat, lon)})
+            } else {
+                alert("API call failed with: " + response.status + "." + " Try again later or email me at vlsulliv@yahoo.com");
+        }}
+    )
 }
-fiveDayData();
+
+/******************* 1 DAY API CALL ************************/ 
+
+function oneDayWeather (lat, lon) {
+    fetch(oneDayURI).then(function(response) {
+        if (response.ok) {
+        response.json().then(function(data) {
+            console.log(data);
+
+            let feels_like = data.main.feels_like;
+            let humidity = data.main.humidity;
+            let pressure = data.main.pressure;
+            let temp = data.main.temp;
+            let temp_max = data.main.temp_max;
+            let temp_min = data.main.temp_min;
+            let sunrise = data.sys.sunrise;
+            let sunset = data.sys.sunset;
+            let description = data.sys.description;
+            let icon = data.weather.icon;
+            let main = data.weather.main;
+            let deg = data.wind.deg;
+            let speed = data.wind.deg;
+                    console.log(feels_like);
+                    console.log(humidity);
+                    console.log(pressure);
+                    console.log(temp);
+                    console.log(temp_max);
+                    console.log(temp_min);
+                    console.log(sunrise);
+                    console.log(sunset);
+                    console.log(description);
+                    console.log(icon);
+                    console.log(main);
+                    console.log(deg);
+                    console.log(speed);
+        })
+    }}
+)}
+oneDayWeather(lat, lon);
+
+/******************* END API CALLS ************************/ 
 
 // get coordinates for 5 day URI
-function getLocation(cityName) {
-    fetch(fiveDayURI).then(res => {
-        if (Response.ok) {
-            res.json().then(function(data) {
-                console.log(data);
-                lat = data.city.coord.lat;
-                long = data.city.coord.lon;
-                oneDayData(lat, long);
-        })}
-    })
-}
-getLocation(cityName);
+// function getLocation(cityID) {
+//     fetch(fiveDayURI).then(res => {
+//         if (Response.status == 200) {
+//             res.json().then(function(data) {
+//                 console.log(data);
+//                 fiveDayURI();
+//                 var lat = data.city.coord.lat;
+//                 var lon = data.city.coord.lon;
+                
+//         })}
+//     })
+// }
 
-
-
-// fetch oneDayData
-function oneDayData(lat, long) {   
-    fetch(oneDayURI).then(res => {
-        res.json().then(data => {
-            console.log(data);
-        })
-    })
-}
-
-
-
-
-
+// // fetch oneDayData
+// function oneDayData(lat, long) {   
+//     fetch(oneDayURI).then(res => {
+//         res.json().then(data => {
+//             console.log(data);
+//         })
+//     })
+// }
 
 // console.log(data)
 // var one = document.getElementById("p")
 // one.innerText = data.current.humidity;
-
       
 // // declare and assign current weather data
 // var current_Humidity = data.current.humidity;
@@ -133,6 +168,3 @@ function oneDayData(lat, long) {
     // newCard.appendChild(cardBody);
     // return inputCity;
 // })
-
-// console.log(inputCity);
-
