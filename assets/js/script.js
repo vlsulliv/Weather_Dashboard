@@ -1,81 +1,100 @@
 /******************************************************
  * Weather Dashboard By: Vince - github.com/vlsulliv *
-******************************************************/ 
-let cityKey = "austin";
+ ******************************************************/
+let cityKey = 'austin';
 let part = 'hour, min';
-let lat = "30.2672";
-let lon = "-97.7431";
-let keyID = "8640e73fae150abb200d3b09df7599f2";
+let lat = '30.2672';
+let lon = '-97.7431';
+let keyID = '8640e73fae150abb200d3b09df7599f2';
 let fiveDayURI = `https://api.openweathermap.org/data/2.5/weather?q=${cityKey}&appid=${keyID}`;
 let oneDayURI = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${keyID}`;
 
 let storeInputID = [];
+console.log('hello');
+console.log('h');
+// moment().format()
+// console.log(moment().format('LTS'));
 
 /******************************************************
  * use local store to put & get searches
  * declare vars _ assign value as button
  * store user input in var
-******************************************************/ 
+ ******************************************************/
 
-if (storeInputID.length != 0 ) {
-    let storeInputID = localStorage.setItem(inputID);
-} else {/*enter command here*/}
+let search = document.getElementById('search-btn');
+let input = document.getElementById('citySearchForm').value;
 
-/******************* 5 DAY API CALL ************************/ 
+// .addEventListener('citySearchForm').value;
 
-function fiveDayAPI(cityKey) {
-    fetch(fiveDayURI).then(function(response) {
-        if(response.ok) {
-            response.json().then(function(data) { console.log(data);
-                let lat = data.coord.lat;
-                let lon = data.coord.lon;
-                oneDayWeather(lat, lon)})
-            } else {
-                alert("API call failed with: " + response.status + "." + " Try again later or email me at vlsulliv@yahoo.com");
-        }}
-    )
+if (storeInputID.length != 0) {
+  let storeInputID = localStorage.setItem(inputID);
+} else {
+  /*enter command here*/
 }
 
-/******************* 1 DAY API CALL ************************/ 
+/******************* 5 DAY API CALL ************************/
 
-function oneDayWeather (lat, lon) {
-    fetch(oneDayURI).then(function(response) {
-        if (response.ok) {
-        response.json().then(function(data) {
-            console.log(data);
+function fiveDayAPI(cityKey) {
+  fetch(fiveDayURI).then(function (response) {
+    if (response.ok) {
+      response.json().then(function (data) {
+        console.log(data);
+        let lat = data.coord.lat;
+        let lon = data.coord.lon;
+        oneDayWeather(lat, lon);
+      });
+    } else {
+      alert(
+        'API call failed with: ' +
+          response.status +
+          '.' +
+          ' Try again later or email me at vlsulliv@yahoo.com',
+      );
+    }
+  });
+}
 
-            let feels_like = data.main.feels_like;
-            let humidity = data.main.humidity;
-            let pressure = data.main.pressure;
-            let temp = data.main.temp;
-            let temp_max = data.main.temp_max;
-            let temp_min = data.main.temp_min;
-            let sunrise = data.sys.sunrise;
-            let sunset = data.sys.sunset;
-            let description = data.sys.description;
-            let icon = data.weather.icon;
-            let main = data.weather.main;
-            let deg = data.wind.deg;
-            let speed = data.wind.deg;
-                    console.log(feels_like);
-                    console.log(humidity);
-                    console.log(pressure);
-                    console.log(temp);
-                    console.log(temp_max);
-                    console.log(temp_min);
-                    console.log(sunrise);
-                    console.log(sunset);
-                    console.log(description);
-                    console.log(icon);
-                    console.log(main);
-                    console.log(deg);
-                    console.log(speed);
-        })
-    }}
-)}
+/******************* 1 DAY API CALL ************************/
+
+function oneDayWeather(lat, lon) {
+  fetch(oneDayURI).then(function (response) {
+    if (response.ok) {
+      response.json().then(function (data) {
+        console.log(data);
+
+        let feels_like = data.main.feels_like;
+        let humidity = data.main.humidity;
+        let pressure = data.main.pressure;
+        let temp = data.main.temp;
+        let temp_max = data.main.temp_max;
+        let temp_min = data.main.temp_min;
+        let sunrise = data.sys.sunrise;
+        let sunset = data.sys.sunset;
+        let description = data.sys.description;
+        let icon = data.weather.icon;
+        let main = data.weather.main;
+        let deg = data.wind.deg;
+        let speed = data.wind.deg;
+        console.log(feels_like);
+        console.log(humidity);
+        console.log(pressure);
+        console.log(temp);
+        console.log(temp_max);
+        console.log(temp_min);
+        console.log(sunrise);
+        console.log(sunset);
+        console.log(description);
+        console.log(icon);
+        console.log(main);
+        console.log(deg);
+        console.log(speed);
+      });
+    }
+  });
+}
 oneDayWeather(lat, lon);
 
-/******************* END API CALLS ************************/ 
+/******************* END API CALLS ************************/
 
 // get coordinates for 5 day URI
 // function getLocation(cityID) {
@@ -86,13 +105,13 @@ oneDayWeather(lat, lon);
 //                 fiveDayURI();
 //                 var lat = data.city.coord.lat;
 //                 var lon = data.city.coord.lon;
-                
+
 //         })}
 //     })
 // }
 
 // // fetch oneDayData
-// function oneDayData(lat, long) {   
+// function oneDayData(lat, long) {
 //     fetch(oneDayURI).then(res => {
 //         res.json().then(data => {
 //             console.log(data);
@@ -103,7 +122,7 @@ oneDayWeather(lat, lon);
 // console.log(data)
 // var one = document.getElementById("p")
 // one.innerText = data.current.humidity;
-      
+
 // // declare and assign current weather data
 // var current_Humidity = data.current.humidity;
 // Document.getElementById("two").innerHTML(current_Humidity);
@@ -134,7 +153,6 @@ oneDayWeather(lat, lon);
 //             var weatherIcon = data.daily[i].weather.icon;
 //         }
 
-
 // let a = current_Humidity
 // console.log(a)
 /*
@@ -144,27 +162,27 @@ oneDayWeather(lat, lon);
 // search.addEventListener('onClick', (e) => {
 //     e.preventDefault() && e.stopPropagation();
 
-    // get user input
-    // let inputCity = document.getElementById("search").value
-    // complete api uri, let api_uri;
+// get user input
+// let inputCity = document.getElementById("search").value
+// complete api uri, let api_uri;
 
-    // CREATE CARD - DEFINE CONTAINTER
-    // let newCard = document.createElement("div");
-    // newCard.setAttribute("id", `card-${numCards++}`);
-    // let cardBody = document.createElement("div");
-    // cardBody.setAttribute("class", "card-body");
+// CREATE CARD - DEFINE CONTAINTER
+// let newCard = document.createElement("div");
+// newCard.setAttribute("id", `card-${numCards++}`);
+// let cardBody = document.createElement("div");
+// cardBody.setAttribute("class", "card-body");
 
-    // CARD TITLE
-    // let cardHeader = document.createElement("h5");
-    // cardHeader.setAttribute("class", "card-title");
-    // cardHeader.innerHTML = searchKeyword;
+// CARD TITLE
+// let cardHeader = document.createElement("h5");
+// cardHeader.setAttribute("class", "card-title");
+// cardHeader.innerHTML = searchKeyword;
 
-    // CARD BODY
-    // let cardContent = document.createElement("p");
-    // cardContent.setAttribute("class", "card-text");
+// CARD BODY
+// let cardContent = document.createElement("p");
+// cardContent.setAttribute("class", "card-text");
 
-    // Append card
-    // cardBody.appendChild(cardHeader);
-    // newCard.appendChild(cardBody);
-    // return inputCity;
+// Append card
+// cardBody.appendChild(cardHeader);
+// newCard.appendChild(cardBody);
+// return inputCity;
 // })

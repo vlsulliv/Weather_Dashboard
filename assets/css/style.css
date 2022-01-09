@@ -1,12 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-
 /* ######## Apply to all ########### */
+
 *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
-
 
 body {
     height: 100%;
@@ -51,13 +50,19 @@ body {
     justify-content: center;
 }
 
-.nav-text{
-    font-size: 50px;
+nav h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 100px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    width: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-/* ############ body ###############  */
-
-/* search*/
+/* ############ SEARCH ###############  */
 
 .citySearchBtn {
     text-decoration: none;
@@ -72,17 +77,13 @@ body {
 #citySearchForm {
     max-height: 50px;
 }
+
 .column-one{
     float: left; 
     position: relative; 
     right: 300px;
 }
-/* column 2*/
-.column-two {
-    float: right; 
-    position: relative;
-    left: 250px; 
-}
+
 
 p#one {
     width: 1700px;
@@ -91,22 +92,36 @@ p#one {
 div#two-a{
     width: 1250px;
 }
-#div.card-1d {
+
+.card-1day {
     border-style: solid ;
-    border-width: thick;
+    border-width: normal;
     border-color: black;
     padding: 10px;
-    width: 2000px;
-}
-cd-1day {
-    width: 1500px;
+    width: 1000px;
+    height: 150px;
 }
 
+/* column 2*/
+.column-two {
+    float: right; 
+    position: relative;
+    left: 250px; 
+}
+
+/* cd-1day {
+    width: 1500px;
+} */
 
 /* ######### Network Info ############ */
 
 .search {
     /* width: 220px; */
     color:white;
-
 }
+
+/* ######### 1day title ############ */
+
+
+
+/* ######### 1day body ############ */

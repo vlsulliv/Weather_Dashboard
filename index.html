@@ -1,125 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="utf-8"/>
-        <title>VS⚡</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link rel="stylesheet" type="text/css" href="./assets/css/style.css"/>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
-        <link rel="icon" type="image/x-icon" href="/assets//images/favicon.png">
-    </head>
+  <head>
+    <meta charset="utf-8"/>
+    <title>VS ⚡</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"/>
+    <link rel="icon" type="image/x-icon" href="/assets//images/favicon.png">
+  </head>
+  <body>
 
-    <body>
-        <!-- Page Jumbotron -->
-        <nav class="navbar">
-            <span class="nav-text">Weather Dashboard</span>
-        </nav>
+    <!-- Page Jumbotron -->
+    <nav class="navbar">
+      <div class="nav-text">
+        <h2>Weather Dashboard</h2>
+      </div>
+    </nav>
 
-        <!-- 1 row 2 columns bootstrap  -->
-        <div class="container">
-            <div class="row">
-                <div class="col-4 left-column column-one">
-                    <!-- column 1 -->
-                    <p>Search for a City:<br></p>
-                    <div class="input-group">
-                        <input id="citySearchForm" type="text" class="form-control" placeholder="Enter a City" aria-label="Enter a City"/>
-                        <div class="append-after-input">
-                            <button class="btn btn-primary citySearchBtn" id="search-btn" type="button" value="Submit" id="submit_btn">
-                                <i class="fas fa-search" id="searchBtn">Search</i>
-                            </button>
-                        </div>
-                    </div>
+    <div class="container">
+      <div class="row">
+
+         <!-- column1 - search -->
+        <div class="col-4 left-column column-one">
+          <p>Search for a City:</p>
+          <div class="input-group">
+            <input id="citySearchForm" type="text" class="form-control" placeholder="Enter a City" aria-label="Enter a City">
+            <div class="append-after-input">
+              <button class="btn btn-primary citySearchBtn" id="search-btn" type="button" value="Submit">
+                <i class="fas fa-search" id="searchBtn">Search</i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="col-8">
+          <div id="one" class="column-two">
+
+            <!-- 1 day -->  
+            <section id="two-a" class="container d-flex justify-content-center cd-1day">
+              <div class="card border-success mb-3" style="max-width: 80%">
+                <p class="onedaycard" id="one"></p>
+                <div class="card-1day">
+                  <p class="1d-title">Success card title</p>
+                  <p class="1d-body">Success card title</p>
                 </div>
-                <div class="col-8">
-                    <div
-                        id="one" class="column-two">
-                        <!-- Column 2 -->
-                        <div id="two-a" class="container d-flex justify-content-center cd-1day">
-                            <div class="card border-success mb-3" style="max-width: 80%">
-                                <p class="" id="one"></p>
-                                <div class="card-1day">
-                                    <p class="card-1d-title">Success card title</p>
-                                    <p class="card-1d-body">Success card title</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="two-b" class="container d-flex justify-content-center flex-wrap">
-                            <div id="three-b" class="card border-success mb-3" style="max-width: 12rem; min-width: 12rem;">
-                                <div class="card-header bg-transparent border-success">
-                                    Header
-                                </div>
-                                <div class="card-body text-success">
-                                    <h5 class="card-title">Success card title</h5>
-                                    <p class="card-text">
-                                        Some quick example text to build on the card title and make up
-                                                                                                                                                                                          the bulk of the card's content.
-                                    </p>
-                                </div>
-                            </div>
-                            <div id="three-c" class="card border-success mb-3" style="max-width: 12rem; min-width: 12rem;">
-                                <div class="card-header bg-transparent border-success">
-                                    Header
-                                </div>
-                                <div class="card-body text-success">
-                                    <h5 class="card-title">Success card title</h5>
-                                    <p class="card-text">
-                                        Some quick example text to build on the card title and make up
-                                                                                                                                                                                          the bulk of the card's content.
-                                    </p>
-                                </div>
-                            </div>
-                            <div id="three-d" class="card border-success mb-3" style="max-width: 12rem; min-width: 12rem;">
-                                <div class="card-header bg-transparent border-success">
-                                    Header
-                                </div>
-                                <div class="card-body text-success">
-                                    <h5 class="card-title">Success card title</h5>
-                                    <p class="card-text">
-                                        Some quick example text to build on the card title and make up
-                                                                                                                                                                                          the bulk of the card's content.
-                                    </p>
-                                </div>
-                            </div>
-                            <div id="three-e" class="card border-success mb-3" style="max-width: 12rem; min-width: 12rem;">
-                                <div class="card-header bg-transparent border-success">
-                                    Header
-                                </div>
-                                <div class="card-body text-success">
-                                    <h5 class="card-title">Success card title</h5>
-                                    <p class="card-text">
-                                        Some quick example text to build on the card title and make up
-                                                                                                                                                                                          the bulk of the card's content.
-                                    </p>
-                                </div>
-                            </div>
-                            <div id="three-f" class="card border-success mb-3" style="max-width: 12rem; min-width: 12rem;">
-                                <div class="card-header bg-transparent border-success">
-                                    Header
-                                </div>
-                                <div class="card-body text-success">
-                                    <h5 class="card-title">Success card title</h5>
-                                    <p class="card-text">
-                                        Some quick example text to build on the card title and make up
-                                                                                                                                                                                          the bulk of the card's content.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+              </div>
+            </section>
+
+            <div id="two-b" class="container d-flex justify-content-center flex-wrap">
+              <div id="three-b" class="card border-success mb-3" style="max-width: 12rem; min-width: 12rem;">
+                <div class="card-header bg-transparent border-success">
+                  Header
                 </div>
+                <div class="card-body text-success">
+                  <h5 class="card-title">Success card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
+
+              <div id="three-c" class="card border-success mb-3" style="max-width: 12rem; min-width: 12rem;">
+                <div class="card-header bg-transparent border-success">
+                  Header
+                </div>
+                <div class="card-body text-success">
+                  <h5 class="card-title">Success card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
+
+              <div id="three-d" class="card border-success mb-3" style="max-width: 12rem; min-width: 12rem;">
+                <div class="card-header bg-transparent border-success">
+                  Header
+                </div>
+                <div class="card-body text-success">
+                  <h5 class="card-title">Success card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
+
+              <div id="three-e" class="card border-success mb-3" style="max-width: 12rem; min-width: 12rem;">
+                <div class="card-header bg-transparent border-success">
+                  Header
+                </div>
+                <div class="card-body text-success">
+                  <h5 class="card-title">Success card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
+
+              <div id="three-f" class="card border-success mb-3" style="max-width: 12rem; min-width: 12rem;">
+                <div class="card-header bg-transparent border-success">
+                  Header
+                </div>
+                <div class="card-body text-success">
+                  <h5 class="card-title">Success card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
             </div>
 
-            <!-- User search  -->
+          </div>
+        </div>
+      </div>
 
-            <!-- Main Dial Contents  -->
-
-            <!-- link (2) js files -->
-            <script src="./assets/js/script.js"></script>
-            <scipt src="./assets/js/moment.js"></scipt>
-      
-            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" crossorigin="anonymous"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
-          </body>
-        </html>
+      <script src="/assets/js/script"></script>
+      <scipt src="/assets/js/moment"></scipt>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+  </body>
+</html>
