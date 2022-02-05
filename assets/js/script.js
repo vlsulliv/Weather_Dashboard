@@ -1,41 +1,36 @@
-/******************************************************
- * Weather Dashboard By: Vince - github.com/vlsulliv *
- ******************************************************/
+const dotenv  = require('dotenv');
+
+let key = API;
+
+let BASEURI = "https://api.openweathermap.org/data/2.5/"
+let FIVEDAY = BASEURI + `weather?q=${cityKey}&appid=${key}`;
+let ONEDAY = BASEURI + `weather?lat=${lat}&lon=${lon}&appid=${key}`;
+
+
+
+
 let cityKey = 'austin';
 let part = 'hour, min';
 let lat = '30.2672';
 let lon = '-97.7431';
-let keyID = '8640e73fae150abb200d3b09df7599f2';
-let fiveDayURI = `https://api.openweathermap.org/data/2.5/weather?q=${cityKey}&appid=${keyID}`;
-let oneDayURI = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${keyID}`;
 
 let storeInputID = [];
-console.log('hello');
-console.log('h');
-// moment().format()
-// console.log(moment().format('LTS'));
 
-/******************************************************
- * use local store to put & get searches
- * declare vars _ assign value as button
- * store user input in var
- ******************************************************/
+
 
 let search = document.getElementById('search-btn');
 let input = document.getElementById('citySearchForm').value;
-
 // .addEventListener('citySearchForm').value;
+
 
 if (storeInputID.length != 0) {
   let storeInputID = localStorage.setItem(inputID);
 } else {
-  /*enter command here*/
+  console.log('success');
 }
 
-/******************* 5 DAY API CALL ************************/
-
 function fiveDayAPI(cityKey) {
-  fetch(fiveDayURI).then(function (response) {
+  fetch(FIVEDAY).then(function (response) {
     if (response.ok) {
       response.json().then(function (data) {
         console.log(data);
@@ -57,7 +52,7 @@ function fiveDayAPI(cityKey) {
 /******************* 1 DAY API CALL ************************/
 
 function oneDayWeather(lat, lon) {
-  fetch(oneDayURI).then(function (response) {
+  fetch(ONEDAY).then(function (response) {
     if (response.ok) {
       response.json().then(function (data) {
         console.log(data);
@@ -98,11 +93,11 @@ oneDayWeather(lat, lon);
 
 // get coordinates for 5 day URI
 // function getLocation(cityID) {
-//     fetch(fiveDayURI).then(res => {
+//     fetch(FIVEDAY).then(res => {
 //         if (Response.status == 200) {
 //             res.json().then(function(data) {
 //                 console.log(data);
-//                 fiveDayURI();
+//                 FIVEDAY();
 //                 var lat = data.city.coord.lat;
 //                 var lon = data.city.coord.lon;
 
@@ -112,7 +107,7 @@ oneDayWeather(lat, lon);
 
 // // fetch oneDayData
 // function oneDayData(lat, long) {
-//     fetch(oneDayURI).then(res => {
+//     fetch(ONEDAY).then(res => {
 //         res.json().then(data => {
 //             console.log(data);
 //         })

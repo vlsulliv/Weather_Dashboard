@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 /* ######## Apply to all ########### */
 
 *,
@@ -28,13 +29,13 @@ body {
 .container {
     padding-top: 30px; 
     margin-top: 20px; 
-    font-family: 'Roboto', sans-serif;
+    font-family: sans-serif;
 }
 
 .left-column {
     float: left;
     position: relative;
-    /* justify-content:left; */
+    justify-content:left;
     right:200px;
     width: 30%;
 }
@@ -42,24 +43,23 @@ body {
 /* ########## nav ############# */
 
 .navbar {
-    color: whitesmoke;
-    background: linear-gradient(#3053A8, #252068);
-    padding-top: 10px;
-    padding-bottom:10px;
     display:flex;
-    justify-content: center;
-}
-
-nav h2 {
-    display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 100px;
-    padding-top: 30px;
+    padding-top: 20px;
     padding-bottom: 10px;
+}
+
+.navbar h2 {
+    color: whitesmoke;
+    background: linear-gradient(#3053A8, #252068);
+    font-family: Roboto;
+    display: flex-box;
+    text-align: center;
+    font-size: 50px;
     width: 100%;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-right="5vw";
 }
 
 /* ############ SEARCH ###############  */
@@ -93,7 +93,7 @@ div#two-a{
     width: 1250px;
 }
 
-.card-1day {
+#one {
     border-style: solid ;
     border-width: normal;
     border-color: black;
