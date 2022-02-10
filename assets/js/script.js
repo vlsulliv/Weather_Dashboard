@@ -1,33 +1,22 @@
-const dotenv  = require('dotenv');
-
-let key = API;
-
+let API_KEY = "8640e73fae150abb200d3b09df7599f2";
+let cityKey = "austin";
+let lat = "30.2672";
+let lon = "-97.7431";
 let BASEURI = "https://api.openweathermap.org/data/2.5/"
-let FIVEDAY = BASEURI + `weather?q=${cityKey}&appid=${key}`;
-let ONEDAY = BASEURI + `weather?lat=${lat}&lon=${lon}&appid=${key}`;
-
-
-
-
-let cityKey = 'austin';
-let part = 'hour, min';
-let lat = '30.2672';
-let lon = '-97.7431';
+let FIVEDAY = BASEURI + `weather?q=${cityKey}&appid=${API_KEY}`;
+let ONEDAY = BASEURI + `weather?lat=${lat}&lon=${lon}&appid=${API_KEY}`;
 
 let storeInputID = [];
-
-
-
 let search = document.getElementById('search-btn');
 let input = document.getElementById('citySearchForm').value;
-// .addEventListener('citySearchForm').value;
-
 
 if (storeInputID.length != 0) {
   let storeInputID = localStorage.setItem(inputID);
 } else {
   console.log('success');
 }
+
+/******************* 5 DAY API CALL ************************/
 
 function fiveDayAPI(cityKey) {
   fetch(FIVEDAY).then(function (response) {
@@ -39,16 +28,11 @@ function fiveDayAPI(cityKey) {
         oneDayWeather(lat, lon);
       });
     } else {
-      alert(
-        'API call failed with: ' +
-          response.status +
-          '.' +
-          ' Try again later or email me at vlsulliv@yahoo.com',
-      );
+      alert("Unable");
     }
   });
 }
-
+// fiveDayAPI();
 /******************* 1 DAY API CALL ************************/
 
 function oneDayWeather(lat, lon) {
@@ -58,31 +42,43 @@ function oneDayWeather(lat, lon) {
         console.log(data);
 
         let feels_like = data.main.feels_like;
+        let oneday = document.getElementById('one').innderText = feels_like;
+
         let humidity = data.main.humidity;
+        document.getElementById('one').innerText = humidity;
+
         let pressure = data.main.pressure;
+        document.getElementById('one').innerText = pressure;
+
         let temp = data.main.temp;
+        document.getElementById('one').innerText = temp;
+
         let temp_max = data.main.temp_max;
+        document.getElementById('one').innerText = humidity;
+
         let temp_min = data.main.temp_min;
+        document.getElementById('one').innerText = temp_min;
+
         let sunrise = data.sys.sunrise;
+        document.getElementById('one').innerText = sunrise;
+
         let sunset = data.sys.sunset;
+        document.getElementById('one').innerText = sunset;
+
         let description = data.sys.description;
+        document.getElementById('one').innerText = description;
+        
         let icon = data.weather.icon;
+        document.getElementById('one').innerText = icon;
+
         let main = data.weather.main;
+        document.getElementById('one').innerText = main;
+
         let deg = data.wind.deg;
+        document.getElementById('one').innerText = deg;
+
         let speed = data.wind.deg;
-        console.log(feels_like);
-        console.log(humidity);
-        console.log(pressure);
-        console.log(temp);
-        console.log(temp_max);
-        console.log(temp_min);
-        console.log(sunrise);
-        console.log(sunset);
-        console.log(description);
-        console.log(icon);
-        console.log(main);
-        console.log(deg);
-        console.log(speed);
+        document.getElementById('one').innerText = speed;
       });
     }
   });
