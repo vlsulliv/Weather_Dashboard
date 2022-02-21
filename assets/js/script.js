@@ -8,13 +8,17 @@ let ONEDAY = BASEURI + `weather?lat=${lat}&lon=${lon}&appid=${API_KEY}`;
 
 let storeInputID = [];
 let search = document.getElementById('search-btn');
-let input = document.getElementById('citySearchForm').value;
+let input = document.getElementById('citySearchForm');
 
-if (storeInputID.length != 0) {
-  let storeInputID = localStorage.setItem(inputID);
-} else {
-  console.log('success');
-}
+const date = document.getElementById("div1");
+// req = $.getJSON('http://api.openweathermap.org/data/2.5/weather?q=London,uk&callback=?');
+
+// req.then(function(resp) {
+//   var prefix = 'wi wi-';
+//   var code = resp.weather[0].id;
+//   var icon = weatherIcons[code].icon;
+
+
 
 /******************* 5 DAY API CALL ************************/
 
@@ -41,17 +45,60 @@ function oneDayWeather(lat, lon) {
       response.json().then(function (data) {
         console.log(data);
 
+        let currentDate = new Date(data.dt*1000);
+        let day =  currentDate.getDate();
+        let month = currentDate.getMonth();
+        let year = currentDate.getFullYear();
+        let dateobj = data.name + "(" + month + "/" + day + "/" + year + ")";
+        let todaysDate = JSON.stringify(dateobj);
+
+        let displayDate = document.getElementById('div1')
+        let para = document.createElement('p')
+        let node = document.createTextNode("hello")
+        para.appendChild(node);
+        let element = document.getElementById('one');
+        element.appendChild.Node = node;
+        // displayDate.innerText = todaysDate;
+        // let addDate = document.createElement('date');
+        // addDate.innerText = "date";
+
+  
+        let weatherPic = data.weather[0].icon
+        // currentPicEl.setAttribute("src","https://openweathermap.org/img/wn/" + weatherPic + "@2x.png");
+        // currentPicEl.setAttribute("alt",response.data.weather[0].description);
+        // let para = document.createElement('p')
+        // let node = document.createTextNode("hello");
+        // para.appendChild(node);
+
+        // let element = document.getElementById('p1');
+        // element.appendChild(node);
+
+        
+        // let today = document.getElementById('p1-title');
+        // let element = document.getElementById("div1");
+        // element.appendChild(para);
+        // daily.appendChild(para)
+        // const para = document.createElement("p");
+        // const node = document.createTextNode("This is new.");
+        // para.appendChild(node);
+
+        // const element = document.getElementById("div1");
+        // const child = document.getElementById("p1");
+        // element.insertBefore(para, child);
+        
+
+        // document.getElementById('one').innerHTML = date;
         let feels_like = data.main.feels_like;
-        let oneday = document.getElementById('one').innderText = feels_like;
+        // let oneday = document.getElementById('one').innderText = feels_like;
 
         let humidity = data.main.humidity;
-        document.getElementById('one').innerText = humidity;
+        // document.getElementById('one').innerText = humidity;
 
         let pressure = data.main.pressure;
-        document.getElementById('one').innerText = pressure;
+        // document.getElementById('one').innerText = pressure;
 
         let temp = data.main.temp;
-        document.getElementById('one').innerText = temp;
+        // document.getElementById('one').innerText = temp;
 
         let temp_max = data.main.temp_max;
         document.getElementById('one').innerText = humidity;
@@ -59,14 +106,14 @@ function oneDayWeather(lat, lon) {
         let temp_min = data.main.temp_min;
         document.getElementById('one').innerText = temp_min;
 
-        let sunrise = data.sys.sunrise;
-        document.getElementById('one').innerText = sunrise;
+        // let sunrise = data.sys.sunrise;
+        // document.getElementById('one').innerText = sunrise;
 
-        let sunset = data.sys.sunset;
-        document.getElementById('one').innerText = sunset;
+        // let sunset = data.sys.sunset;
+        // document.getElementById('one').innerText = sunset;
 
-        let description = data.sys.description;
-        document.getElementById('one').innerText = description;
+        // let description = data.sys.description;
+        // document.getElementById('one').innerText = description;
         
         let icon = data.weather.icon;
         document.getElementById('one').innerText = icon;
@@ -84,6 +131,30 @@ function oneDayWeather(lat, lon) {
   });
 }
 oneDayWeather(lat, lon);
+
+// const newdate = new Date();
+// const sunrise = new Date(data.sys.sunrise * 1000); 
+// const sunset = new Date(data.sys.sunset * 1000);
+/* Get suitable icon for weather */
+// if (date.getHours() >= sunrise.getHours() && date.getHours() < sunset.getHours()) {
+//   var weatherIconID = `wi wi-owm-day-${result.data.weather[0].id}`;
+// }
+// else if (date.getHours() >= sunset.getHours()) {
+//   var weatherIconID = `wi wi-owm-night-${result.data.weather[0].id}`;
+// }
+  // If we are not in the ranges mentioned above, add a day/night prefix.
+//   if (!(code > 699 && code < 800) && !(code > 899 && code < 1000)) {
+//     icon = 'day-' + icon;
+//   }
+//   // Finally tack on the prefix.
+//   icon = prefix + icon;
+
+// if (storeInputID.length != 0) {
+//   let storeInputID = localStorage.setItem(inputID);
+// } else {
+//   console.log('success');
+// }
+
 
 /******************* END API CALLS ************************/
 
