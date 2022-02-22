@@ -2,19 +2,27 @@
 
 <div id="top"></div>
 
-# **☀️ Weather<font color="red"> App</font>**
-
 
 <div align="center">
-<p>Weather data in a fast and elegant way. We are providing highly recognisable weather products that make working with the weather data a way easier. We work with millions of developers around a clock and believe that these benefits might be suitable for most of applications, up to the complex enterprise systems.</p>
-<a href="https://imgur.com/znj5YQp">
-	<img src="https://i.imgur.com/znj5YQp.jpg" title="source: imgur.com" width="200"/>
-</a>
 
-<a href="https://choosealicense.com/licenses/mit/">
-	<img src="https://img.shields.io/badge/License-MIT-yellow.svg" title="source: imgur.com" width="100"/>
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+<!-- [![MIT-License][license-shield]][license-url] -->
+
+<a href="https://imgur.com/znj5YQp">
+	<img src="https://i.imgur.com/znj5YQp.jpg" title="source: imgur.com" width="200"/><br><br>
+ <font color="red" size="50">Weather App</font>
 </a>
+<br/>
+    <a href="https://github.com/github_username/repo_name">View Demo</a>
+    ·
+    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
 </div>
+
 
 
 <!-- Local Weather Radar - daily & weekly weather forecast -->
@@ -46,8 +54,10 @@
 </details>
 
 
-## About
+## About Weather App ☀️
 
+Weather data in a fast and elegant way. We are providing highly recognisable weather products that make working with the weather data a way easier. We work with millions of developers around a clock and believe that these benefits might be suitable for most of applications, up to the complex enterprise systems.
+<!-- 
 ```hs
 -- Point-free style
 fib :: Integer -> Integer
@@ -58,9 +68,7 @@ where fibs = 0 : scanl (+) 1 fibs
 fib :: Integer -> Integer
 fib n = fibs !! n
 where fibs = 0 : scanl (+) 1 fibs
-```
-
-
+``` -->
 
 # Technologies
 1. [MDN WebDocs](https://developer.mozilla.org/en-US/)
@@ -69,46 +77,38 @@ where fibs = 0 : scanl (+) 1 fibs
 4. [CSS](https://www.w3.org/Style/CSS/Overview.en.html)
 5. [Javascript](https://standardjs.com/)
 
-## getting-started
+## Getting Started
 
 1. In terminal, navigate to project directory
-2. Clone project `git clone` https://github.com/vlsulliv/Weather_Dashboard.git
-   * cd into `Weather-app`
-3. Run `npm install`. If you do not have npm installed you can get it from [here](https://nodejs.org/en/).
-4. Run `npm start` to lauch a local web server and open a tab in you Browser with the page.
-
-open browser to localhost:3000/
-
-## prerequisites
-
-https://nodejs.org/en/
+2. verify  `node version 16.14.0` is installed.active.
+   * go [here](https://nodejs.org/en/) to download node.
 
 
 ## Installation
 
 
-## usage
+1. Clone project `git clone` https://github.com/vlsulliv/Weather_Dashboard.git
+   * cd into `Weather-app`
+2. Run `npm install`. If you do not have npm installed you can get it from [here](https://nodejs.org/en/).
+3. Run `npm start` to lauch a local web server and open a tab in you Browser with the page.
+
+* if application fails to auto launch in the browser: navigate to `localhost:3000/`
 
 
+## Usage
 
+After application launch, enter a city in the search bar and click enter for weather ddata to populate. You search history is saved and will be available via drop down upon focus of the search bar.
 
-## Contact Me
-
-**I always welcome meeting new developers, feature requests, or advice on how I can improve my work.**
-
-- [Gmail](vlsullivanhou@gmail.com)
-- [Yahoo](vlsulliv@yahoo.com)<br>
-- [LinkedIn](https://linkedin.com/vlsulliv/)<br>
-- [GitHub](https://github.com/vlsulliv)<br>
 
 ## Contribute
 
-Don't stop there! Clone the repo and help make this project awesome.
+Send feature requests, give advice on how I can improve, or clone directly.
 
-**To get a local copy:**
+Download locally:
+
 ```Steps
 1. Fork the repository
-	* git clone https://github.com/your_username/Weather-app
+	* git clone https://github.com/your_vlsulliv/Weather-app
 	* git checkout development
 	* git checkout -b branch name
 2. git remote add upstream https://github.com/IjayAbby/Weather-app
@@ -125,8 +125,35 @@ Don't stop there! Clone the repo and help make this project awesome.
 * [Geeks for Geeks ](https://www.geeksforgeeks.org/)<br />
 * [API Tutorial](https://coding-boot-camp.github.io/full-stack/apis/how-to-use-api-keys)<br />
 
+
+## Contact Me
+
+> 🚀 Reach out!<br> I'm always open to meet new developers & collaborate. 
+
+- [Gmail](vlsullivanhou@gmail.com)
+- [Yahoo](vlsulliv@yahoo.com)<br>
+- [LinkedIn](https://linkedin.com/vlsulliv/)<br>
+- [GitHub](https://github.com/vlsulliv)<br>
+
+
+
 ## Author
 created with ❤️ and ☕ by 👤 `Vince`` 
 ___
 <p align="center">🦖 (<a href="#top">back to top</a>) 🐙</p> 
 
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/github_vlsulliv/Weather_Dashboard.svg?style=for-the-badge
+[contributors-url]: https://github.com/github_vlsulliv/Weather_Dashboard/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/github_vlsulliv/Weather_Dashboard.svg?style=for-the-badge
+[forks-url]: https://github.com/github_vlsulliv/Weather_Dashboard/network/members
+[stars-shield]: https://img.shields.io/github/stars/github_vlsulliv/Weather_Dashboard.svg?style=for-the-badge
+[stars-url]: https://github.com/github_vlsulliv/Weather_Dashboard/stargazers
+[issues-shield]: https://img.shields.io/github/issues/github_vlsulliv/Weather_Dashboard.svg?style=for-the-badge
+[issues-url]: https://github.com/github_vlsulliv/Weather_Dashboard/issues
+[license-shield]: https://img.shields.io/github/license/github_vlsulliv/Weather_Dashboard.svg?style=for-the-badge
+<!-- [license-url]: https://github.com/github_vlsulliv/Weather_Dashboard/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge
+[license-url]: https://github.com/vlsullivan/Weather_Dashboard/blob/master/LICENSE.txt -->
+[product-screenshot]: images/screenshot.png

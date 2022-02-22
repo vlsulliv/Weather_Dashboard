@@ -36,6 +36,7 @@ function fiveDayAPI(cityKey) {
     }
   });
 }
+
 // fiveDayAPI();
 /******************* 1 DAY API CALL ************************/
 
@@ -51,31 +52,18 @@ function oneDayWeather(lat, lon) {
         let year = currentDate.getFullYear();
         let dateobj = data.name + "(" + month + "/" + day + "/" + year + ")";
         let todaysDate = JSON.stringify(dateobj);
-
-        let displayDate = document.getElementById('div1')
-        let para = document.createElement('p')
-        let node = document.createTextNode("hello")
-        para.appendChild(node);
-        let element = document.getElementById('one');
-        element.appendChild.Node = node;
-        // displayDate.innerText = todaysDate;
-        // let addDate = document.createElement('date');
-        // addDate.innerText = "date";
-
+        console.log(typeof todaysDate)
+        console.log(todaysDate)
+        let heading = document.getElementById('h1');
+        heading.innerHTML = day + month + year;
   
-        let weatherPic = data.weather[0].icon
-        // currentPicEl.setAttribute("src","https://openweathermap.org/img/wn/" + weatherPic + "@2x.png");
-        // currentPicEl.setAttribute("alt",response.data.weather[0].description);
-        // let para = document.createElement('p')
-        // let node = document.createTextNode("hello");
-        // para.appendChild(node);
-
-        // let element = document.getElementById('p1');
-        // element.appendChild(node);
+        let icon = document.getElementById('wpic')
+        let pic = data.weather[0].icon
+        icon.innerHTML = pic;
 
         
-        // let today = document.getElementById('p1-title');
-        // let element = document.getElementById("div1");
+        let today = document.getElementById('p1-title');
+        let element = document.getElementById("div1");
         // element.appendChild(para);
         // daily.appendChild(para)
         // const para = document.createElement("p");
@@ -248,3 +236,4 @@ oneDayWeather(lat, lon);
 // newCard.appendChild(cardBody);
 // return inputCity;
 // })
+
