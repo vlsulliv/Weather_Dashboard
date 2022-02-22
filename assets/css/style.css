@@ -38,8 +38,8 @@ body,html{
 h1 {
     font-size: 5rem;
     text-transform: capitalize;
-    /* text-shadow: 1px 1px 1px red,
-                    2px 2px 1px red; */
+    text-shadow: 1px 1px 1px red,
+                    2px 2px 1px red;
     text-align: center;
     letter-spacing: 2px;
 }
@@ -61,19 +61,19 @@ p {
     letter-spacing: 1px;
 }
 
+/* ############ SEARCH ###############  */
+
 #two-b {
-    height: 100vh;
+    /* height: 100vh; */
     width: 60vw;
 }
 
 #two-a {
-    height: 30vh;
+    /* height: 30vh; */
     width: 50vw;
 }
 
-/* ############ SEARCH ###############  */
-
-.column-one{
+.one{
     float: left; 
     position: relative; 
     right: 300px;
@@ -85,14 +85,13 @@ p#one {
 
 }
 
-
-#one {
-    border-style: solid ;
-    border-width: normal;
-    border-color: black;
-    padding: 10px;
+#two {
+    /* border-style: solid ; */
+    /* border-width: normal; */
+    /* border-color: black; */
+    padding-left: 150px;
     width: 50vw;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 /* column 2*/
@@ -104,14 +103,11 @@ p#one {
 }
 
 #div1 {
-    width: 90vh;
-    height: 50vh;
-    padding-bottom: 10px;
+    width: 100vh;
+    /* height: 50vh; */
+    /* padding-bottom: 10px; */
 }
 
-/* .card {
-    height: 150px;
-} */
 
 /* ######### SEARCH ############ */
 
@@ -127,7 +123,7 @@ p#one {
     float: right;
     /* margin-top: 9px; */
     /* margin-bottom: 9px; */
-    padding-top: 10px;
+    /* padding-top: 10px; */
     line-height: 22px;
     color: #FFFBFEFF;
     background-color:  #4A4458;

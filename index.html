@@ -20,14 +20,16 @@
   </nav>
 
   <div class="container">
+
+
     <div class="row">
       <!-- column1 - search -->
-      <div class="col-4 left-column column-one">
-        <div class="container">
-          <div class="row">
-            <h2>City Search</h2>
-            <div class="searchInput">
-              <input type="text" class="searchBox  input-lg" placeholder="Enter a city name" />
+      <div class="col-4 left-column one">
+        <div class="input">
+          <div class="search-input">
+            <h2 class="input-text">City Search</h2>
+            <div class="searchBar">
+              <input type="text" class="searchBox  input-lg" placeholder="Enter a City Name" />
               <button type="submit" class="button btn btn-primary btn-sm">Search</button>
             </div>
           </div>
@@ -36,20 +38,22 @@
 
       <!-- Column 2 -->
       <div class="col-8">
-        <div id="one" class="column-two">
+        <div id="two" class="column-two">
 
           <!-- one day -->
-          <div id="two-a" class="container d-flex justify-content-center cd-1day">
+          <div id="two" class="d-flex justify-content-center cd-1day">
             <div id="div1" class="card border-success mb-3">
               <h1 id="h1" class="onedaycard"></h1>
               <p id="wpic" class="pic"></p>
 
               <!-- <div class="card-1day"> -->
-              <p id="date" class="title"></p>
-              <p id="Tempature" class="title">Success card title</p>
-              <p id="humidity" class="title">Success card title</p>
-              <p id="wind" class="title">Success card title</p>
-              <p id="uvi" class="title">Success card title</p>
+            <ol>
+              <li id="date" class="title">date</li>
+              <li id="Tempature" class="title">temp</li>
+              <li id="humidity" class="title">humidity</li>
+              <li id="wind" class="title">wind</li>
+              <li id="uvi" class="title">uvi</li>
+            </ol>
               <!-- </div> -->
             </div>
           </div>

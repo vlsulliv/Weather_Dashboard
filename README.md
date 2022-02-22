@@ -56,7 +56,9 @@
 
 ## About Weather App ☀️
 
-Weather data in a fast and elegant way. We are providing highly recognisable weather products that make working with the weather data a way easier. We work with millions of developers around a clock and believe that these benefits might be suitable for most of applications, up to the complex enterprise systems.
+Get weather data in a fast and elegant way. External API "Open Weather" is data source. Weather data points include the following: `Temperature`,  `Name`, `Humidity`, `Min Temp`, `Max Temp`, `Wind Speed`, `Description`, `Visibility`.
+
+
 <!-- 
 ```hs
 -- Point-free style
@@ -71,26 +73,29 @@ where fibs = 0 : scanl (+) 1 fibs
 ``` -->
 
 # Technologies
-1. [MDN WebDocs](https://developer.mozilla.org/en-US/)
-2. [W3 Schools](https://www.w3schools.com/)
+  
+1. [Bootstrap v4.6](https://getbootstrap.com/)
+2. [Open Weather API](https://openweathermap.org/api)
 3. [HTML](https://html.spec.whatwg.org/)
 4. [CSS](https://www.w3.org/Style/CSS/Overview.en.html)
 5. [Javascript](https://standardjs.com/)
 
 ## Getting Started
 
-1. In terminal, navigate to project directory
-2. verify  `node version 16.14.0` is installed.active.
+1. verify  `node version 16.14.0` is installed.active.
    * go [here](https://nodejs.org/en/) to download node.
-
+2. Information about UV index [UVI](https://www.who.int/news-room/questions-and-answers/item/radiation-the-ultraviolet-(uv)-index) from WHO
+3. Concept reference
+   * [W3 Schools](https://www.w3schools.com/)
+   * [MDN WebDocs](https://developer.mozilla.org/en-US/)
 
 ## Installation
 
-
-1. Clone project `git clone` https://github.com/vlsulliv/Weather_Dashboard.git
+1. Open desktop terminal, navigate to project directory
+2. Clone project `git clone` https://github.com/vlsulliv/Weather_Dashboard.git
    * cd into `Weather-app`
-2. Run `npm install`. If you do not have npm installed you can get it from [here](https://nodejs.org/en/).
-3. Run `npm start` to lauch a local web server and open a tab in you Browser with the page.
+3. Run `npm install`. If you do not have npm - get it [here](https://nodejs.org/en/).
+4. Run `npm start` to auto - lauch in default web browser
 
 * if application fails to auto launch in the browser: navigate to `localhost:3000/`
 
